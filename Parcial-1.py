@@ -2,6 +2,132 @@ import pygame
 import math
 from libreria import *
 
+def dibujarIsometricoPlanta(ven, cara1, cara2, cara3, cara4, cara5, cara6, cara7, C = BLANCO):
+    # Cara6
+    Poligono(ven, cara6, C, 0)
+    Poligono(ven, cara6, NEGRO)
+
+    # Cara7
+    Poligono(ven, cara7, BLANCO, 0)
+    Poligono(ven, cara7, NEGRO)
+
+    # Cara1
+    Poligono(ven, cara1, BLANCO, 0)
+    Poligono(ven, cara1, NEGRO)
+
+    # Cara2
+    Poligono(ven, cara2, BLANCO, 0)
+    Poligono(ven, cara2, NEGRO)
+
+    # Cara3
+    Poligono(ven, cara3, BLANCO, 0)
+    Poligono(ven, cara3, NEGRO)
+
+    # Cara 4
+    Poligono(ven, cara4, BLANCO, 0)
+    Poligono(ven, cara4, NEGRO)
+
+    # Cara5
+    Poligono(ven, cara5, C, 0)
+    Poligono(ven, cara5,NEGRO)
+
+def dibujarIsometricoAlzada(ven, cara1, cara2, cara3, cara4, cara5, cara6, cara7, C = BLANCO):
+    # Cara6
+    Poligono(ven, cara6, BLANCO, 0)
+    Poligono(ven, cara6, NEGRO)
+
+    # Cara7
+    Poligono(ven, cara7, BLANCO, 0)
+    Poligono(ven, cara7, NEGRO)
+
+    # Cara1
+    Poligono(ven, cara1, C, 0)
+    Poligono(ven, cara1, NEGRO)
+
+    # Cara2
+    Poligono(ven, cara2, BLANCO, 0)
+    Poligono(ven, cara2, NEGRO)
+
+    # Cara3
+    Poligono(ven, cara3, C, 0)
+    Poligono(ven, cara3, NEGRO)
+
+    # Cara 4
+    Poligono(ven, cara4, BLANCO, 0)
+    Poligono(ven, cara4, NEGRO)
+
+    # Cara5
+    Poligono(ven, cara5, BLANCO, 0)
+    Poligono(ven, cara5,NEGRO)
+
+def dibujarIsometricoPerfil(ven, cara1, cara2, cara3, cara4, cara5, cara6, cara7, C = BLANCO):
+    # Cara6
+    Poligono(ven, cara6, BLANCO, 0)
+    Poligono(ven, cara6, NEGRO)
+
+    # Cara7
+    Poligono(ven, cara7, C, 0)
+    Poligono(ven, cara7, NEGRO)
+
+    # Cara1
+    Poligono(ven, cara1, BLANCO, 0)
+    Poligono(ven, cara1, NEGRO)
+
+    # Cara2
+    Poligono(ven, cara2, C, 0)
+    Poligono(ven, cara2, NEGRO)
+
+    # Cara3
+    Poligono(ven, cara3, BLANCO, 0)
+    Poligono(ven, cara3, NEGRO)
+
+    # Cara 4
+    Poligono(ven, cara4, C, 0)
+    Poligono(ven, cara4, NEGRO)
+
+    # Cara5
+    Poligono(ven, cara5, BLANCO, 0)
+    Poligono(ven, cara5,NEGRO)
+
+def dibujarPuntos(ven, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36):
+    Punto(ventana, p1)
+    Punto(ventana, p2)
+    Punto(ventana, p3)
+    Punto(ventana, p4)
+    Punto(ventana, p5)
+    Punto(ventana, p6)
+    Punto(ventana, p7)
+    Punto(ventana, p8)
+    Punto(ventana, p9)
+    Punto(ventana, p10)
+    Punto(ventana, p11)
+    Punto(ventana, p12)
+    Punto(ventana, p13)
+    Punto(ventana, p14)
+    Punto(ventana, p15)
+    Punto(ventana, p16)
+    Punto(ventana, p17)
+    Punto(ventana, p18)
+    Punto(ventana, p19)
+    Punto(ventana, p20)
+    Punto(ventana, p21)
+    Punto(ventana, p22)
+    Punto(ventana, p23)
+    Punto(ventana, p24)
+    Punto(ventana, p25)
+    Punto(ventana, p26)
+    Punto(ventana, p27)
+    Punto(ventana, p28)
+    Punto(ventana, p29)
+    Punto(ventana, p30)
+    Punto(ventana, p31)
+    Punto(ventana, p32)
+    Punto(ventana, p33)
+    Punto(ventana, p34)
+    Punto(ventana, p35)
+    Punto(ventana, p36)
+
+
 if __name__ == '__main__':
     pygame.init()
     ventana = pygame.display.set_mode([ANCHO, ALTO])
@@ -20,21 +146,48 @@ if __name__ == '__main__':
     fin = False
 
     # Puntos para las vistas
-    p1 = [60,400]
-    p2 = [120, 400]
-    p3 = [180, 400]
-    p4 = [240, 400]
-    p5 = [300, 400]
-    p6 = [60, 460]
-    p7 = [120, 460]
-    p8 = [180, 460]
-    p9 = [240, 460]
-    p10 = [300, 460]
-    p11 = [60, 520]
-    p12 = [120, 520]
-    p13 = [180, 520]
-    p14 = [240, 520]
-    p15 = [300, 520]
+    # bloque1
+    p1 = [60,100]
+    p2 = [120, 100]
+    p3 = [180, 100]
+    p4 = [240, 100]
+    p5 = [300, 100]
+    p6 = [360, 100]
+    # bloque2
+    p7 = [60, 160]
+    p8 = [120, 160]
+    p9 = [180, 160]
+    p10 = [240, 160]
+    p11 = [300, 160]
+    p12 = [360, 160]
+    # bloque3
+    p13 = [60, 220]
+    p14 = [120, 220]
+    p15 = [180, 220]
+    p16 = [240, 220]
+    p17 = [300, 220]
+    p18 = [360, 220]
+    # bloque3
+    p19 = [60, 280]
+    p20 = [120, 280]
+    p21 = [180, 280]
+    p22 = [240, 280]
+    p23 = [300, 280]
+    p24 = [360, 280]
+    # bloque4
+    p25 = [60, 340]
+    p26 = [120, 340]
+    p27 = [180, 340]
+    p28 = [240, 340]
+    p29 = [300, 340]
+    p30 = [360, 340]
+    # bloque5
+    p31 = [60, 400]
+    p32 = [120, 400]
+    p33 = [180, 400]
+    p34 = [240, 400]
+    p35 = [300, 400]
+    p36 = [360, 400]
 
 
     # Creacion de puntos para la figura
@@ -130,35 +283,47 @@ if __name__ == '__main__':
                     Plano(ventana,origen)
 
                     # Se dibujan las caras en el plano
-                    # Cara6
-                    Poligono(ventana, cara6, MORADO, 0)
-                    Poligono(ventana, cara6, NEGRO)
+                    dibujarIsometricoPlanta(ventana, cara1, cara2, cara3, cara4, cara5, cara6, cara7, MORADO)
 
-                    # Cara7
-                    Poligono(ventana, cara7, BLANCO, 0)
-                    Poligono(ventana, cara7, NEGRO)
+                # Vista alzada
+                if event.key == pygame.K_2:
+                    ventana.fill(NEGRO)
+                    ventana.blit(texto4, [150,40])
+                    # Se dibuja el Isometrico
+                    dibujarIsometricoAlzada(ventana, cara1, cara2, cara3, cara4, cara5, cara6, cara7, VERDE)
+                    # Se dibujan los Puntos
+                    dibujarPuntos(ventana, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36)
+                    # Dibuajar vistas
+                    ls1 = [p4, p6, p30, p28]
+                    Poligono(ventana, ls1, VERDE)
+                    Linea(ventana, p5, p29, VERDE)
 
-                    # Cara1
-                    Poligono(ventana, cara1, BLANCO, 0)
-                    Poligono(ventana, cara1, NEGRO)
+                # Vista de Planta
+                if event.key == pygame.K_3:
+                    ventana.fill(NEGRO)
+                    ventana.blit(texto2, [150,40])
+                    # Se dibuja el isometrico
+                    dibujarIsometricoPlanta(ventana, cara1, cara2, cara3, cara4, cara5, cara6, cara7, MORADO)
+                    # Se dibujan los Puntos
+                    dibujarPuntos(ventana, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36)
+                    ls1 = [p4, p5, p17, p16]
+                    ls2 = [p5, p6, p36, p35, p29, p28, p4]
+                    Poligono(ventana, ls1, MORADO)
+                    Poligono(ventana, ls2, MORADO)
 
-                    # Cara2
-                    Poligono(ventana, cara2, BLANCO, 0)
-                    Poligono(ventana, cara2, NEGRO)
+                # VIsta de Perfil
+                if event.key == pygame.K_4:
+                    ventana.fill(NEGRO)
+                    ventana.blit(texto3, [150, 40])
+                    # Se dibuja el isometrico
+                    dibujarIsometricoPerfil(ventana, cara1, cara2, cara3, cara4, cara5, cara6, cara7, ROJO)
+                    # Se dibujan los Puntos
+                    dibujarPuntos(ventana, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36)
+                    ls1 = [p1, p6, p30, p25]
+                    Poligono(ventana, ls1, ROJO)
+                    Linea(ventana, p3, p15, ROJO)
+                    Linea(ventana, p15, p13, ROJO)
+                    Linea(ventana, p5, p29, ROJO)
 
-                    # Cara3
-                    Poligono(ventana, cara3, BLANCO, 0)
-                    Poligono(ventana, cara3, NEGRO)
-
-                    # Cara 4
-                    Poligono(ventana, cara4, BLANCO, 0)
-                    Poligono(ventana, cara4, NEGRO)
-
-                    # Cara5
-                    Poligono(ventana, cara5, MORADO, 0)
-                    Poligono(ventana, cara5,NEGRO)
-
-
-
-
+        Plano(ventana, origen)
         pygame.display.flip()
