@@ -143,6 +143,7 @@ if __name__ == '__main__':
     texto5 = fuente.render("Escalamineto +", 0, BLANCO)
     texto6 = fuente.render("Escalamiento -", 0, BLANCO)
     origen = [ANCHO // 2, ALTO // 2]
+    valorEscalamiento1 = 0.5
     fin = False
 
     # Puntos para las vistas
@@ -324,6 +325,42 @@ if __name__ == '__main__':
                     Linea(ventana, p3, p15, ROJO)
                     Linea(ventana, p15, p13, ROJO)
                     Linea(ventana, p5, p29, ROJO)
+
+                # Escalamient -
+                if event.key == pygame.K_5:
+                    ventana.fill(NEGRO)
+                    ventana.blit(texto6, [680, 20])
+                    # Se escalan los Puntos
+                    Aescalado = escalapf(origen, AP, valorEscalamiento1)
+                    Bescalado = escalapf(origen, BP, valorEscalamiento1)
+                    Cescalado = escalapf(origen, CP, valorEscalamiento1)
+                    Descalado = escalapf(origen, DP, valorEscalamiento1)
+                    Eescalado = escalapf(origen, EP, valorEscalamiento1)
+                    Fescalado = escalapf(origen, FP, valorEscalamiento1)
+                    Gescalado = escalapf(origen, GP, valorEscalamiento1)
+                    Hescalado = escalapf(origen, HP, valorEscalamiento1)
+                    Iescalado = escalapf(origen, IP, valorEscalamiento1)
+                    Jescalado = escalapf(origen, JP, valorEscalamiento1)
+                    Kescalado = escalapf(origen, KP, valorEscalamiento1)
+                    Lescalado = escalapf(origen, LP, valorEscalamiento1)
+                    Mescalado = escalapf(origen, MP, valorEscalamiento1)
+                    Nescalado = escalapf(origen, NP, valorEscalamiento1)
+                    Oescalado = escalapf(origen, OP, valorEscalamiento1)
+                    Pescalado = escalapf(origen, PP, valorEscalamiento1)
+                    Qescalado = escalapf(origen, QP, valorEscalamiento1)
+                    # Se crean las caras escaladas
+                    cara1Esc = [Aescalado, Bescalado, Cescalado, Descalado]
+                    cara2Esc = [Aescalado, Descalado, Fescalado, Eescalado]
+                    cara3Esc = [Gescalado, Eescalado, Fescalado, Hescalado]
+                    cara4Esc = [Iescalado, Jescalado, Kescalado, Lescalado, Hescalado, Gescalado]
+                    cara5Esc = [Lescalado, Oescalado, Nescalado, Mescalado, Cescalado, Descalado, Fescalado, Hescalado]
+                    cara6Esc = [Jescalado, Pescalado, Qescalado, Kescalado]
+                    cara7Esc = [Pescalado, Nescalado, Oescalado, Qescalado]
+                    # Se dibuja el isometrico escalado
+                    dibujarIsometricoPlanta(ventana, cara1Esc, cara2Esc, cara3Esc, cara4Esc, cara5Esc, cara6Esc, cara7Esc, MORADO)
+
+
+
 
         Plano(ventana, origen)
         pygame.display.flip()
