@@ -144,6 +144,7 @@ if __name__ == '__main__':
     texto6 = fuente.render("Escalamiento -", 0, BLANCO)
     origen = [ANCHO // 2, ALTO // 2]
     valorEscalamiento1 = 0.5
+    x = 0
     fin = False
 
     # Puntos para las vistas
@@ -270,7 +271,7 @@ if __name__ == '__main__':
     cara7 = [PP, NP, OP, QP]
 
 
-    Plano(ventana,origen)
+    # Plano(ventana,origen)
     while not fin:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -281,7 +282,7 @@ if __name__ == '__main__':
                 if event.key == pygame.K_1:
                     ventana.fill(NEGRO)
                     ventana.blit(texto1, [680, 20])
-                    Plano(ventana,origen)
+                    #Plano(ventana,origen)
 
                     # Se dibujan las caras en el plano
                     dibujarIsometricoPlanta(ventana, cara1, cara2, cara3, cara4, cara5, cara6, cara7, MORADO)
@@ -359,8 +360,175 @@ if __name__ == '__main__':
                     # Se dibuja el isometrico escalado
                     dibujarIsometricoPlanta(ventana, cara1Esc, cara2Esc, cara3Esc, cara4Esc, cara5Esc, cara6Esc, cara7Esc, MORADO)
 
+                #rotacion en z derecha
+                if event.key == pygame.K_6:
+                    ventana.fill(NEGRO)
+                    x -= 30
+                    # Creacion de puntos para la figura
+                    # Cara1
+                    # Se crean los puntos cartesianos
+                    A = polar_a_cartesiano(50, 30 + x)
+                    B = polar_a_cartesiano(100, 30 + x)
+                    C = traslacion(B, [0, 200])
+                    D = traslacion(A, [0, 200])
+                    # Se transforman los puntos cartesianos a pantalla
+                    AP = Cart_A_Pantalla(origen, A)
+                    BP = Cart_A_Pantalla(origen, B)
+                    CP = Cart_A_Pantalla(origen, C)
+                    DP = Cart_A_Pantalla(origen, D)
+                    # Se crea una lista con los puntos que forman la cara!
+                    cara1 = [AP, BP, CP, DP]
+
+                    # Cara2
+                    # Se crean los puntos cartesianos
+                    E = polar_a_cartesiano(50, 150 + x)
+                    F = polar_a_cartesiano(50, 150 + x)
+                    # Se transforman los puntos cartesianos a pantalla
+                    EP = Cart_A_Pantalla(AP, E)
+                    FP = Cart_A_Pantalla(DP, F)
+                    # Se crea una lista con los puntos que forman la cara2
+                    cara2 = [AP, DP, FP, EP]
+
+                    # Cara3
+                    # Se crean los putos cartesianos
+                    G = polar_a_cartesiano(50, 150 + x)
+                    H = traslacion(G, [0, 200])
+                    # Se transforman los puntos cartesianos a pantalla
+                    GP = Cart_A_Pantalla(origen, G)
+                    HP = Cart_A_Pantalla(origen, H)
+                    # Se crea una lista con los puntos que forman la cara3
+                    cara3 = [GP, EP, FP, HP]
+
+                    # Cara4
+                    # Se crean los puntos cartesianos
+                    I = polar_a_cartesiano(250, 150 + x)
+                    J = traslacion(I, [0, 100])
+                    # Punto auxiliar para hallar los puntos K y L
+                    Aux1 = polar_a_cartesiano(150, 150 + x)
+                    K = traslacion(Aux1, [0, 100])
+                    L = traslacion(Aux1, [0, 200])
+                    # Se transforman los puntos cartesianos a pantalla
+                    IP = Cart_A_Pantalla(origen, I)
+                    JP = Cart_A_Pantalla(origen, J)
+                    Aux1P = Cart_A_Pantalla(origen, Aux1)
+                    KP = Cart_A_Pantalla(origen, K)
+                    LP = Cart_A_Pantalla(origen, L)
+                    # Se crea una lista con los puntos que forman la cara4
+                    cara4 = [IP, JP, KP, LP, HP, GP]
+
+                    # Cara5
+                    # Se crean los puntos cartesianos
+                    M = polar_a_cartesiano(250, 150 + x)
+                    N = polar_a_cartesiano(250, 150 + x)
+                    O = polar_a_cartesiano(150, 150 + x)
+                    # Se transforman los puntos cartesianos a pantalla
+                    MP = Cart_A_Pantalla(CP, M)
+                    NP = Cart_A_Pantalla(DP, N)
+                    OP = Cart_A_Pantalla(DP, O)
+                    # Se crea una lista con los puntos que forman la cara5
+                    cara5 = [LP, OP, NP, MP, CP, DP, FP, HP]
+
+                    # Cara6
+                    # Se crean los puntos cartesianos
+                    P = polar_a_cartesiano(50, 30 + x)
+                    Q = polar_a_cartesiano(50, 30 + x)
+                    # Se tranasforman los puntos cartesianos a pantalla
+                    PP = Cart_A_Pantalla(JP, P)
+                    QP = Cart_A_Pantalla(KP, Q)
+                    # Se crea una lista con los puntos que forman la cara6
+                    cara6 = [JP, PP, QP, KP]
+
+                    # Cara7
+                    # Se crea una lista con los puntos que forman la cara7
+                    cara7 = [PP, NP, OP, QP]
+                    # Dinujar isometrico
+                    dibujarIsometricoPlanta(ventana, cara1, cara2, cara3, cara4, cara5, cara6, cara7, MORADO)
+
+                # rotacion en z izquierda
+                if event.key == pygame.K_7:
+                    ventana.fill(NEGRO)
+                    x += 30
+                    # Creacion de puntos para la figura
+                    # Cara1
+                    # Se crean los puntos cartesianos
+                    A = polar_a_cartesiano(50, 30 + x)
+                    B = polar_a_cartesiano(100, 30 + x)
+                    C = traslacion(B, [0, 200])
+                    D = traslacion(A, [0, 200])
+                    # Se transforman los puntos cartesianos a pantalla
+                    AP = Cart_A_Pantalla(origen, A)
+                    BP = Cart_A_Pantalla(origen, B)
+                    CP = Cart_A_Pantalla(origen, C)
+                    DP = Cart_A_Pantalla(origen, D)
+                    # Se crea una lista con los puntos que forman la cara!
+                    cara1 = [AP, BP, CP, DP]
+
+                    # Cara2
+                    # Se crean los puntos cartesianos
+                    E = polar_a_cartesiano(50, 150 + x)
+                    F = polar_a_cartesiano(50, 150 + x)
+                    # Se transforman los puntos cartesianos a pantalla
+                    EP = Cart_A_Pantalla(AP, E)
+                    FP = Cart_A_Pantalla(DP, F)
+                    # Se crea una lista con los puntos que forman la cara2
+                    cara2 = [AP, DP, FP, EP]
+
+                    # Cara3
+                    # Se crean los putos cartesianos
+                    G = polar_a_cartesiano(50, 150 + x)
+                    H = traslacion(G, [0, 200])
+                    # Se transforman los puntos cartesianos a pantalla
+                    GP = Cart_A_Pantalla(origen, G)
+                    HP = Cart_A_Pantalla(origen, H)
+                    # Se crea una lista con los puntos que forman la cara3
+                    cara3 = [GP, EP, FP, HP]
+
+                    # Cara4
+                    # Se crean los puntos cartesianos
+                    I = polar_a_cartesiano(250, 150 + x)
+                    J = traslacion(I, [0, 100])
+                    # Punto auxiliar para hallar los puntos K y L
+                    Aux1 = polar_a_cartesiano(150, 150 + x)
+                    K = traslacion(Aux1, [0, 100])
+                    L = traslacion(Aux1, [0, 200])
+                    # Se transforman los puntos cartesianos a pantalla
+                    IP = Cart_A_Pantalla(origen, I)
+                    JP = Cart_A_Pantalla(origen, J)
+                    Aux1P = Cart_A_Pantalla(origen, Aux1)
+                    KP = Cart_A_Pantalla(origen, K)
+                    LP = Cart_A_Pantalla(origen, L)
+                    # Se crea una lista con los puntos que forman la cara4
+                    cara4 = [IP, JP, KP, LP, HP, GP]
+
+                    # Cara5
+                    # Se crean los puntos cartesianos
+                    M = polar_a_cartesiano(250, 150 + x)
+                    N = polar_a_cartesiano(250, 150 + x)
+                    O = polar_a_cartesiano(150, 150 + x)
+                    # Se transforman los puntos cartesianos a pantalla
+                    MP = Cart_A_Pantalla(CP, M)
+                    NP = Cart_A_Pantalla(DP, N)
+                    OP = Cart_A_Pantalla(DP, O)
+                    # Se crea una lista con los puntos que forman la cara5
+                    cara5 = [LP, OP, NP, MP, CP, DP, FP, HP]
+
+                    # Cara6
+                    # Se crean los puntos cartesianos
+                    P = polar_a_cartesiano(50, 30 + x)
+                    Q = polar_a_cartesiano(50, 30 + x)
+                    # Se tranasforman los puntos cartesianos a pantalla
+                    PP = Cart_A_Pantalla(JP, P)
+                    QP = Cart_A_Pantalla(KP, Q)
+                    # Se crea una lista con los puntos que forman la cara6
+                    cara6 = [JP, PP, QP, KP]
+
+                    # Cara7
+                    # Se crea una lista con los puntos que forman la cara7
+                    cara7 = [PP, NP, OP, QP]
+                    # Dinujar isometrico
+                    dibujarIsometricoPlanta(ventana, cara1, cara2, cara3, cara4, cara5, cara6, cara7, MORADO)
 
 
 
-        Plano(ventana, origen)
+        # Plano(ventana, origen)
         pygame.display.flip()
