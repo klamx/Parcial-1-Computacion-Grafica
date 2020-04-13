@@ -133,17 +133,9 @@ if __name__ == '__main__':
     ventana = pygame.display.set_mode([ANCHO, ALTO])
     # Se asigana nombre a la ventana
     pygame.display.set_caption("Parcial 1 computacion grafica")
-    # Se define la fuente que se usara en el programa
-    fuente = pygame.font.Font(None, 25)
-    # Se definene las palabras para cada punto del parcial
-    texto1 = fuente.render("Isometrico", 0, BLANCO)
-    texto2 = fuente.render("Planta", 0, BLANCO)
-    texto3 = fuente.render("Perfil", 0, BLANCO)
-    texto4 = fuente.render("Alzada", 0, BLANCO)
-    texto5 = fuente.render("Escalamineto +", 0, BLANCO)
-    texto6 = fuente.render("Escalamiento -", 0, BLANCO)
     origen = [ANCHO // 2, ALTO // 2]
     valorEscalamiento1 = 0.5
+    # valor de rotacion
     x = 0
     fin = False
 
@@ -281,7 +273,6 @@ if __name__ == '__main__':
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_1:
                     ventana.fill(NEGRO)
-                    ventana.blit(texto1, [680, 20])
                     #Plano(ventana,origen)
 
                     # Se dibujan las caras en el plano
@@ -290,7 +281,6 @@ if __name__ == '__main__':
                 # Vista alzada
                 if event.key == pygame.K_2:
                     ventana.fill(NEGRO)
-                    ventana.blit(texto4, [150,40])
                     # Se dibuja el Isometrico
                     dibujarIsometricoAlzada(ventana, cara1, cara2, cara3, cara4, cara5, cara6, cara7, VERDE)
                     # Se dibujan los Puntos
@@ -303,7 +293,6 @@ if __name__ == '__main__':
                 # Vista de Planta
                 if event.key == pygame.K_3:
                     ventana.fill(NEGRO)
-                    ventana.blit(texto2, [150,40])
                     # Se dibuja el isometrico
                     dibujarIsometricoPlanta(ventana, cara1, cara2, cara3, cara4, cara5, cara6, cara7, MORADO)
                     # Se dibujan los Puntos
@@ -316,7 +305,6 @@ if __name__ == '__main__':
                 # VIsta de Perfil
                 if event.key == pygame.K_4:
                     ventana.fill(NEGRO)
-                    ventana.blit(texto3, [150, 40])
                     # Se dibuja el isometrico
                     dibujarIsometricoPerfil(ventana, cara1, cara2, cara3, cara4, cara5, cara6, cara7, ROJO)
                     # Se dibujan los Puntos
@@ -330,7 +318,6 @@ if __name__ == '__main__':
                 # Escalamient -
                 if event.key == pygame.K_5:
                     ventana.fill(NEGRO)
-                    ventana.blit(texto6, [680, 20])
                     # Se escalan los Puntos
                     Aescalado = escalapf(origen, AP, valorEscalamiento1)
                     Bescalado = escalapf(origen, BP, valorEscalamiento1)
