@@ -348,7 +348,7 @@ if __name__ == '__main__':
                     dibujarIsometricoPlanta(ventana, cara1Esc, cara2Esc, cara3Esc, cara4Esc, cara5Esc, cara6Esc, cara7Esc, MORADO)
 
                 #rotacion en z derecha
-                if event.key == pygame.K_6:
+                if event.key == pygame.K_7:
                     ventana.fill(NEGRO)
                     x -= 30
                     # Creacion de puntos para la figura
@@ -432,7 +432,7 @@ if __name__ == '__main__':
                     dibujarIsometricoPlanta(ventana, cara1, cara2, cara3, cara4, cara5, cara6, cara7, MORADO)
 
                 # rotacion en z izquierda
-                if event.key == pygame.K_7:
+                if event.key == pygame.K_6:
                     ventana.fill(NEGRO)
                     x += 30
                     # Creacion de puntos para la figura
